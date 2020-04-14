@@ -1,0 +1,15 @@
+Epoch 1/10
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.4751 - accuracy: 0.8301
+Epoch 2/10
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.3589 - accuracy: 0.8688
+Epoch 3/10
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.3225 - accuracy: 0.8807
+Epoch 4/10
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.2976 - accuracy: 0.8886
+Epoch 5/10
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.2790 - accuracy: 0.8960
+Epoch 6/10
+1864/1875 [============================>.] - ETA: 0s - loss: 0.2645 - accuracy: 0.9010
+Reached 90% accuracy so cancelling training!
+1875/1875 [==============================] - 6s 3ms/step - loss: 0.2645 - accuracy: 0.9010
+<tensorflow.python.keras.callbacks.History at 0x7fda126451d0>
