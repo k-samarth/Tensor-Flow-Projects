@@ -86,3 +86,47 @@ def train_happy_sad_model():
     return history.history['acc'][-1]
     
 train_happy_sad_model()
+
+
+#if you want to visualize the data set
+train_happy_dir = os.path.join('/tmp/h-or-s/happy')
+
+# Directory with our training human pictures
+train_sad_dir = os.path.join('/tmp/h-or-s/sad')
+
+train_happy_names = os.listdir(train_happy_dir)
+print(train_happy_names[:10])
+
+train_sad_names = os.listdir(train_sad_dir)
+print(train_sad_names[:10])
+
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+# Parameters for our graph; we'll output images in a 4x4 configuration
+nrows = 4
+ncols = 4
+
+# Index for iterating over images
+pic_index = 0
+
+fig = plt.gcf()
+fig.set_size_inches(ncols * 4, nrows * 4)
+
+pic_index += 8
+next_happy_pix = [os.path.join(train_happy_dir, fname) 
+                for fname in train_happy_names[pic_index-8:pic_index]]
+next_sad_pix = [os.path.join(train_sad_dir, fname) 
+                for fname in train_sad_names[pic_index-8:pic_index]]
+
+for i, img_path in enumerate(next_happy_pix+next_sad_pix):
+  # Set up subplot; subplot indices start at 1
+  sp = plt.subplot(nrows, ncols, i + 1)
+  sp.axis('Off') # Don't show axes (or gridlines)
+
+  img = mpimg.imread(img_path)
+  plt.imshow(img)
+
+plt.show()
